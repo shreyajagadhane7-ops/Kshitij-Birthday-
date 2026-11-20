@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kshitij ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:linear-gradient(135deg,#16050c,#3c071c,#12050c);
+ color:white;font-family:Georgia,serif;text-align:center;
+ min-height:100vh;
+}
+section{padding:35px 18px;max-width:600px;margin:auto}
+h1{color:#ffb3c7;font-size:34px}
+h2{color:#ff9eb8}
+p{line-height:1.8;font-size:17px}
+button{
+ background:#b51643;color:white;border:1px solid #ffb3c7;
+ border-radius:30px;padding:14px 25px;font-size:16px;
+ margin:10px;cursor:pointer;
+}
+.hidden{display:none}
+.box{font-size:105px;cursor:pointer;animation:bounce 1.5s infinite}
+@keyframes bounce{50%{transform:translateY(-12px)}}
+.card{
+ background:#ffffff12;border:1px solid #ff91b5;
+ border-radius:18px;padding:22px;margin:18px 0;
+}
+.heart{color:#ff7aab;font-size:23px;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.3)}}
+.note{min-height:80px}
+footer{padding:30px;color:#ffb3c7}
+</style>
+</head>
+<body>
+
+<section id="home">
+ <div class="heart">♥ ♥ ♥</div>
+ <p>A little surprise made with love</p>
+ <h1>Happy Birthday<br>My Kshitij ❤️</h1>
+ <p>To the boy who makes my world beautiful...</p>
+ <div class="box" onclick="openGift()">🎁</div>
+ <p>Tap your gift to open it!</p>
+ <button onclick="openGift()">OPEN YOUR GIFT ❤️</button>
+</section>
+
+<section id="gift" class="hidden">
+ <h1>Surprise, My Love! 💗</h1>
+ <p>Today is all about you.</p>
+ <div class="card">
+  <h2>To My Favourite Person</h2>
+  <p>You are one of the most beautiful parts of my life. I hope your day is filled with happiness, laughter and everything your heart wishes for.</p>
+ </div>
+ <button onclick="show('reasons')">Next Surprise →</button>
+</section>
+
+<section id="reasons" class="hidden">
+ <h1>10 Reasons I Love You ❤️</h1>
+ <div class="card" id="reason">Tap below to discover a reason!</div>
+ <button onclick="nextReason()">Reveal a reason 💌</button>
+ <button onclick="show('notes')">Next Surprise →</button>
+</section>
+
+<section id="notes" class="hidden">
+ <h1>Little Love Notes 💕</h1>
+ <div class="card note" id="note">A tiny message, just for you.</div>
+ <button onclick="nextNote()">Open a love note</button>
+ <button onclick="show('letter')">Read your letter →</button>
+</section>
+
+<section id="letter" class="hidden">
+ <h1>A Letter From My Heart 💌</h1>
+ <div class="card">
+ <p>Happy Birthday, my love! ❤️</p>
+ <p>Today is special because it is the day you were born, and I feel so lucky that life brought you into mine.</p>
+ <p>Thank you for being a part of my happiness, for understanding me, and for making ordinary moments feel special. You have a beautiful place in my heart that no one else can ever take.</p>
+ <p>I wish you endless happiness, success, peace and all the beautiful things you dream of. May you always keep growing, smiling and achieving everything you work hard for.</p>
+ <p>I may not be beside you physically today, but my heart is celebrating every moment with you. Distance cannot make my wishes any less special.</p>
+ <p>I want to keep making memories with you, supporting your dreams and celebrating all your little and big victories.</p>
+ <p>Thank you for being you. I hope this new year of your life is as wonderful as you deserve.</p>
+ <h2>Happy Birthday, Kshitij! ❤️</h2>
+ <p>Forever sending you all my love.</p>
+ <p>Yours, ❤️</p>
+ </div>
+ <button onclick="show('final')">One Last Surprise ✨</button>
+</section>
+
+<section id="final" class="hidden">
+ <div class="heart">♥ ♥ ♥</div>
+ <h1>My Favourite Human ❤️</h1>
+ <div class="card">
+  <p>One birthday, a thousand wishes, and one heart that is always cheering for you.</p>
+  <h2>I LOVE YOU, KSHITIJ! 💋</h2>
+  <p>May your every dream find its way to you.</p>
+ </div>
+ <div style="font-size:35px">🎂 🎁 ❤️</div>
+ <p>Made with endless love, just for you.</p>
+</section>
+
+<footer>Made with love ❤️</footer>
+
+<script>
+function show(id){
+ document.querySelectorAll('section').forEach(s=>s.classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+ window.scrollTo(0,0);
+}
+function openGift(){show('gift')}
+
+const reasons=[
+ "Your smile makes my day brighter.",
+ "You make me feel understood.",
+ "I love the way you care.",
+ "You make ordinary moments special.",
+ "I can be myself around you.",
+ "You make me feel appreciated.",
+ "Your dreams inspire me.",
+ "I love sharing my little moments with you.",
+ "You bring happiness into my life.",
+ "Simply because you are YOU. ❤️"
+];
+let r=0;
+function nextReason(){
+ document.getElementById('reason').innerText=
+ r<reasons.length?reasons[r++]:"All 10 reasons, and a million more! ❤️";
+}
+const notes=[
+ "You are my favourite notification. 💗",
+ "I wish I could celebrate beside you today.",
+ "Your happiness means so much to me.",
+ "You deserve every beautiful thing in life.",
+ "Sending you the biggest virtual kiss! 💋",
+ "No distance can change how special you are.",
+ "Keep smiling, my favourite person. ❤️",
+ "I am always cheering for you.",
+ "You make my world a little brighter.",
+ "Today and always, you are special to me."
+];
+let n=0;
+function nextNote(){
+ document.getElementById('note').innerText=
+ n<notes.length?notes[n++]:"A thousand more notes could never express it all. ❤️";
+}
+</script>
+</body>
+</html>
